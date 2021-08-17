@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <%- include ('partials/header.ejs'); %>
+    
+
+    <title>Monteiro's Answers</title>
+</head>
+<body>
+    <%- include ('partials/navbar.ejs'); %>
+    <div class="container">
+        <br>
+        <h1>Lista de Perguntas</h1>
+        <hr>
+        <button class="btn btn-primary"><a style="color: #fff; text-decoration: none;" href="/perguntar">Perguntar</a></button>
+        <hr>
+        <%  perguntas.forEach((pergunta) => { %>
+        <div class="card">
+            <div class="card-body">
+                <h3><%= pergunta.titulo %></h3>
+                <p><%= pergunta.descricao %></p>
+            </div>
+            <div class="card-footer">
+                <a style="color: #fff; text-decoration: none;" href="/pergunta/<%= pergunta.id %>">
+                    <button class="btn btn-primary">
+                        Responder
+                    </button>
+                </a>
+                
+            </div>   
+        </div>   
+        <hr>
+        <% }) %>
+    </div>
+    <br />
+</body>
+    <%- include('partials/footer.ejs') %>
+</html>

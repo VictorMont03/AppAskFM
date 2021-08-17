@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <%- include ('partials/header.ejs'); %>
+</head>
+<body>
+    <%- include ('partials/navbar.ejs'); %>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h3>Realizar pergunta</h3>
+            </div>
+            <div class="card-body">
+                <form action="/sendask" method="POST">
+                    <label for="">Titulo da pergunta: </label>
+                    <input type="text" class="form-control" placeholder="Pergunta" name="titulo">
+                    <br>
+                    <label for="">Descrição: </label>
+                    <textarea class="form-control" placeholder="Descrição da pergunta" name="descricao"></textarea>
+                    <br> 
+                    <button class="btn btn-outline-primary" type="submit">Perguntar</button>
+                </form>
+            </div>
+        </div>  
+    </div>
+</body>
+    <%- include ('partials/footer.ejs'); %>
+</html>
